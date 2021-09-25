@@ -34,3 +34,8 @@
       - Event which user emit on event bus.
       - Event bus or broker to which any service has aceess+connect to read and write events.
     - Has same downside except also of not easy to understand.
+    - one approach in this:
+      - Service having it's database will get update by other service emit event in bus which will receive by it.
+      - This remove dependency of service D on other which lead to service uptime always.
+      - But if other service are down then this service data will not get update in database which lead to wrong data.
+      - This also leaad to duplicate data in multiple services(may not whole data). also extra storage.
